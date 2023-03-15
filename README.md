@@ -1,2 +1,0 @@
-# booxdeath.github.io
-Turtles 🐢
