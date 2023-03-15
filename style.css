@@ -1,0 +1,260 @@
+/* CSS RESET */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* VARIABLES */
+
+:root {
+    /* COLORS */
+    --FONT-COLOR: #d8ca8c;
+    --BUTTON-FONT_COLOR: #a35724;
+
+    /* SHADOWS */
+    --TEXT-SHADOW: 4px 4px 5px rgb(37, 32, 33);
+    --SHADOW: 2px 2px 2px 1px black;
+
+    /* FONT-SIZE */
+    --FS: clamp(1.5rem, 4vw, 4rem);
+    --FS-MEDIUM: clamp(1.5rem, 2vw, 3.5rem);
+    --FS-SMALL: clamp(1rem, 2vh, 2rem);
+    --FS-P-SMALL: clamp(0.75rem, 1.2vw, 2rem);
+
+    /* BORDERS */
+    --TEXT-BORDER: 1px rgba(0, 0, 0, 0.603);
+}
+
+/* PAGE TRANSITION */
+
+.transition-fade {
+    opacity: 1;
+    transition: opacity 400ms;
+}
+
+html.is-animating .transition-fade {
+    opacity: 0;
+}
+
+/* GENERAL STYLES */
+
+html {
+    font-family: "Comic Sans MS", sans-serif, cursive;
+}
+
+body {
+    background-color: #2A1A1F
+}
+
+#swup {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.menu-item {
+    color: var(--FONT-COLOR);
+    font-size: var(--FS);
+    text-decoration: none;
+    display: block;
+    padding: clamp(0.25rem, 0.5vw, 1rem) 0rem;
+    transform-origin: bottom left;
+    user-select: none;
+
+    transition: opacity 400ms ease;
+    text-shadow: var(--TEXT-SHADOW);
+}
+
+#menu-items {
+    position: fixed;
+    transition: left 0.5s ease;
+    margin-left: clamp(4rem, 20vw, 48rem);
+    z-index: 2;
+    width: 20vw;
+}
+
+#menu-items p {
+    color: whitesmoke;
+    font-size: var(--FS-P-SMALL);
+    padding: 1rem;
+    user-select: none;
+}
+
+#menu-items:hover > .menu-item {
+    opacity: 0.3;
+    cursor: default;
+    animation: smol 0.35s ease-in-out 0s 1 forwards;
+}
+
+#menu-items:hover > .menu-item:hover {
+    opacity: 1;
+    animation: enlarge 0.35s ease-in-out 0s 1 forwards;
+}
+
+#menu-items p:hover {
+    opacity: 1;
+    animation: enlarge 0.35s ease-in-out 0s 1 forwards;
+}
+
+#menu-items:hover ~ #menu-background {
+    transform: scale(1.2);
+    opacity: 0.2;
+}
+
+#menu-items:hover ~ #about-background {
+    transform: scale(1.2);
+    opacity: 0.2;
+}
+
+#menu-background {
+    background: url("https://images.squarespace-cdn.com/content/v1/5369465be4b0507a1fd05af0/1582776941791-BX1816CWL5UNYZ33G5MI/turtle+hatchling");
+    height: 100vh;
+    width: 100vw;
+
+    background-size: cover;
+    background-position: center 95%;
+    opacity: 0.5;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1;
+
+    transition: opacity 800ms ease, transform 800ms ease;
+}
+
+#about-background {
+    background: url("https://images.saymedia-content.com/.image/t_share/MTc0NDU2MDY0MzQxNzE0NTY2/red-eared-slider-turtle-care.jpg");
+    height: 100vh;
+    width: 100vw;
+
+    background-size: cover;
+    background-position: center 45%;
+    opacity: 0.4;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1;
+
+    transition: opacity 800ms ease, transform 800ms ease;
+}
+
+#welcome-text {
+    position: fixed;
+    margin-left: 60vw;
+    text-align: center;
+    color: white;
+    text-shadow: var(--TEXT-SHADOW);
+    font-size: var(--FS-MEDIUM);
+    z-index: 2;
+    user-select: none;
+}
+
+header, footer {
+    width: 100vw;
+    height: 5vh;
+    display: flex;
+    background-color: rgba(19, 19, 19, 0.753);
+    align-items: center;
+    padding: 1rem 1rem;
+    position: fixed;
+    z-index: 3;
+    left: 0;
+}
+
+header {
+    justify-content: space-between;
+    top: 0;
+}
+
+footer {
+    justify-content: right;
+    bottom: 0;
+}
+
+.nav__buttons {
+    display: block;
+    color: var(--FONT-COLOR);
+    text-shadow: var(--TEXT-SHADOW);
+    user-select: none;
+    font-size: var(--FS-SMALL);
+}
+
+.nav__buttons:hover {
+    cursor: default;
+}
+
+.clickable {
+    z-index: 3;
+    transition: filter 500ms ease;
+    color: var(--BUTTON-FONT_COLOR);
+}
+
+.clickable:any-link {
+    text-decoration: none;
+}
+
+.clickable:hover,
+.clickable:focus {
+    filter: brightness(200%);
+    cursor: pointer;
+}
+
+.flashing {
+    animation: flashing 1s ease-in-out 0s infinite;
+    transform: scale(1.5);
+}
+
+.logo {
+    height: 4vh;
+    width: auto;
+    border-radius: 20px;
+    opacit
+    y: 0.5;
+}
+
+@keyframes flashing {
+    0% {
+        transform: scale(1.5);
+        opacity: 1.0;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: scale(1.5);
+        opacity: 1.0;
+    }
+}
+
+@keyframes enlarge {
+    0% {
+        transform: scale(1.0);
+    }
+
+    50% {
+        transform: scale(1.35);
+    }
+
+    100% {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes smol {
+    0% {
+        transform: scale(1.0);
+    }
+
+    60% {
+        transform: scale(0.65);
+    }
+
+    100% {
+        transform: scale(0.8);
+    }
+}

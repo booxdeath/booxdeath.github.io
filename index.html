@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script src="https://unpkg.com/swup@3"></script>
+    <script defer src="animation.js"></script>
+    <script src="main.js"></script>
+    <header>
+        <img class="logo" src="turtle_logo.png" alt="">
+        <nav>
+            <ul class="nav__buttons transition-fade">
+                <a href="/" class="clickable">Menu</a>   
+            </ul>
+        </nav>
+    </header>
+
+    <footer>
+        <nav>
+            <ul class="nav__buttons">
+                <span>&copy; 2023-2023 Boox Co. | All Rights Reserved</span>
+            </ul>
+        </nav>
+    </footer>
+
+    <div id="swup" class="transition-fade">
+        <div id="menu-items">
+            <a href="/" class="menu-item">Home</a>
+            <a href="/about.html" class="menu-item">About</a>
+            <a href="https://discord.gg/gQp3ufPEHb" target="_blank" class="menu-item">Discord</a>
+        </div>
+        <div id="welcome-text">
+            <p>Welcome to Boox's Turtle Hangout.</p>
+        </div>
+        <div id="menu-background"></div>
+    </div>
+</body>
+</html>
